@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AMM MAI ZARE VENTURES</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+      *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:sans-serif;
+  background:#f5f5f5;
+  color:#222;
+}
+
+/* NAVBAR */
+
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  z-index:1000;
+}
+
+.navbar h1{
+  color:orange;
+  font-size:20px;
+}
+
+.navbar ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+.navbar a{
+  text-decoration:none;
+  color:black;
+  font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+  height:100vh;
+  background:url("shago.jpg") center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+  position:relative;
+  color:white;
+  text-align:center;
+  padding:20px;
+  animation:fadeIn 2s ease;
+}
+
+.hero-content h2{
+  font-size:55px;
+  margin-bottom:20px;
+}
+
+.hero-content p{
+  margin-bottom:20px;
+}
+
+.btn{
+  background:orange;
+  color:white;
+  padding:15px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#ff7b00;
+}
+
+/* ABOUT */
+
+.about{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.about h2{
+  margin-bottom:20px;
+  font-size:40px;
+}
+
+/* CEO */
+
+.ceo-section{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  padding:100px 20px;
+  background:white;
+  align-items:center;
+}
+
+.ceo-image img{
+  width:100%;
+  border-radius:20px;
+}
+
+/* PRODUCTS */
+
+.products{
+  padding:100px 20px;
+}
+
+.products h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:40px;
+}
+
+.search-box{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.search-box input{
+  width:300px;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.product-card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  transition:0.4s;
+}
+
+.product-card:hover{
+  transform:translateY(-10px);
+}
+
+.product-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.product-info{
+  padding:20px;
+}
+
+.new-badge{
+  background:green;
+  color:white;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+.price{
+  color:orange;
+  font-weight:bold;
+  margin:10px 0;
+}
+
+.available{
+  color:green;
+}
+
+.out{
+  color:red;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+  padding:100px 20px;
+  background:#fff;
+}
+
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.testimonial{
+  background:#f5f5f5;
+  padding:30px;
+  border-radius:20px;
+}
+
+/* FAQ */
+
+.faq{
+  padding:100px 20px;
+}
+
+.faq-box{
+  background:white;
+  padding:25px;
+  margin-bottom:20px;
+  border-radius:20px;
+}
+
+/* CONTACT */
+
+.contact{
+  padding:100px 20px;
+  background:#111;
+  color:white;
+  text-align:center;
+}
+
+.whatsapp-btn{
+  display:inline-block;
+  margin-top:20px;
+  background:green;
+  color:white;
+  padding:15px 25px;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+  background:black;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+/* SCROLL BUTTON */
+
+#topBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  border:none;
+  background:orange;
+  color:white;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .hero-content h2{
+    font-size:35px;
+  }
+
+  .ceo-section{
+    grid-template-columns:1fr;
+  }
+
+}
+      
+  </style>
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <h1>AMM MAI ZARE VENTURES</h1>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <h2>Premium Fabrics & Tailoring Materials</h2>
+
+      <p>
+        Quality fabrics for fashion lovers and designers.
+      </p>
+
+      <a href="#products" class="btn">
+        Explore Products
+      </a>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <h2>About Us</h2>
+
+    <p>
+      AMM MAI ZARE VENTURES is a trusted fabric and tailoring
+      materials business located at KAITA L.G.A,
+      KOFAR FADA KAITA, BAKIN YARA.
+    </p>
+
+  </section>
+
+  <!-- CEO SECTION -->
+  <section class="ceo-section">
+
+    <div class="ceo-image">
+      <img src="Ceo1image.jpg" alt="">
+    </div>
+
+    <div class="ceo-text">
+      <h2>Alh. MANNIR MU'AZU</h2>
+
+      <p>
+        CEO of AMM MAI ZARE VENTURES.
+        Dedicated to providing premium quality fabrics
+        and tailoring materials.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+
+    <h2>Our Products</h2>
+
+    <div class="search-box">
+      <input type="text" id="searchInput"
+      placeholder="Search products...">
+    </div>
+
+    <div class="product-grid" id="productGrid">
+
+      <!-- PRODUCT 1 -->
+      <div class="product-card">
+
+        <img src="zaren-hula.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>Cap sewing thread</h3>
+
+          <p class="price">₦600 per pieces</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="product-card">
+
+        <img src="cape1.jpg" alt="Cape">
+
+        <div class="product-info">
+
+          <h3>Cape full-Pocket</h3>
+
+          <p class="price">₦1500</p>
+
+          <p class="status out">
+            Out Of Stock
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card">
+
+          <img src="Swiss-less.jpg" alt="">
+        
+
+        <div class="product-info">
+            
+
+          <span class="new-badge">NEW</span>
+
+          <h3>BLACK LESS</h3>
+
+          <p class="price">₦50,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+       
+        
+
+        <!-- PRODUCT 4 -->
+      <div class="product-card">
+
+          <img src="images/fabric3.jpg" alt="">
+        
+
+        <div class="product-info">
+            
+
+          <span class="new-badge">NEW</span>
+
+          <h3>LANDEEN</h3>
+
+          <p class="price">
+             Roll per ₦12,000, and ₦500 per yard</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+       <!-- PRODUCT 5 -->
+      <div class="product-card">
+
+        <img src="7-Star.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>7 STAR</h3>
+
+          <p class="price">₦3500 Per Yard</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      <!-- PRODUCT 6 -->
+      <div class="product-card">
+
+        <img src="zip.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>OPEN ZIP</h3>
+
+          <p class="price">₦1000 per dozen</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+       <!-- PRODUCT 7 -->
+      <div class="product-card">
+
+        <img src="wieving-thread.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>Weaving thread</h3>
+
+          <p class="price">₦1500</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+       <!-- PRODUCT 8 -->
+      <div class="product-card">
+
+        <img src="thread.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3> Thread</h3>
+
+          <p class="price">₦1500 Dozen</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 9 -->
+      <div class="product-card">
+
+        <img src="Shadda1.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3> GEZNA</h3>
+
+          <p class="price">₦12,000 Per yard</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 10 -->
+      <div class="product-card">
+
+        <img src="Shadda2.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3> GEZNA</h3>
+
+          <p class="price">₦12,000 Per yard</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 11 -->
+      <div class="product-card">
+
+        <img src="Jallabiya.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>JALLABIYA MOROCCO</h3>
+
+          <p class="price">₦12,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 12 -->
+      <div class="product-card">
+
+        <img src="Blueless.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>BLUE LESS</h3>
+
+          <p class="price">₦50,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 13 -->
+      <div class="product-card">
+
+        <img src="Whiteless.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>WHITE LESS</h3>
+
+          <p class="price">₦50,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 13 -->
+      <div class="product-card">
+
+        <img src="Maroonless.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>MAROON LESS</h3>
+
+          <p class="price">₦50,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 14 -->
+      <div class="product-card">
+
+        <img src="Redless.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>RED LESS</h3>
+
+          <p class="price">₦50,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 15 -->
+      <div class="product-card">
+
+        <img src="Armyless.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>ARMY GREEN LESS</h3>
+
+          <p class="price">₦50,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 16 -->
+      <div class="product-card">
+
+        <img src="Atamfa1.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>SUPER WAX</h3>
+
+          <p class="price">₦30,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 17 -->
+      <div class="product-card">
+
+        <img src="Robber1.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>SUPER GOLDEN ROBBER</h3>
+
+          <p class="price">₦10,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 18 -->
+      <div class="product-card">
+
+        <img src="Robber2.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>SUPER GOLDEN ROBBER</h3>
+
+          <p class="price">₦10,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      
+      
+      <!-- PRODUCT 20 -->
+      <div class="product-card">
+
+        <img src="Superwax1.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>SUPER WAX</h3>
+
+          <p class="price">₦35,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      <!-- PRODUCT 21 -->
+      <div class="product-card">
+
+        <img src="Superwax2.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>SUPER WAX</h3>
+
+          <p class="price">₦35,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+      <!-- PRODUCT 22 -->
+      <div class="product-card">
+
+        <img src="Superwax3.jpg" alt="">
+
+        <div class="product-info">
+
+          <span class="new-badge">NEW</span>
+
+          <h3>SUPER WAX</h3>
+
+          <p class="price">₦35,000</p>
+
+          <p class="status available">
+            Available
+          </p>
+
+        </div>
+
+      </div>
+      
+    </div>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+
+    <h2>Testimonials</h2>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial">
+        <p>
+          “Very high quality fabrics and amazing service.”
+        </p>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          “Best tailoring materials shop in KAITA.”
+        </p>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          “Affordable and premium products.”
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <h3>Do you sell wholesale?</h3>
+      <p>Yes, we sell both wholesale and retail.</p>
+    </div>
+
+    <div class="faq-box">
+      <h3>Do you deliver outside KAITA?</h3>
+      <p>Yes, delivery services are available.</p>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>KAITA L.G.A, KOFAR FADA KAITA, BAKIN YARA</p>
+
+    <a href="https://wa.me/+2349069189866"
+    class="whatsapp-btn">
+
+      <i class="fab fa-whatsapp"></i>
+      Chat on WhatsApp
+
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 AMM MAI ZARE VENTURES
+    </p>
+  </footer>
+
+  <!-- SCROLL TOP -->
+  <button id="topBtn">
+    ↑
+  </button>
+
+  <!-- JS -->
+  <script>
+      // SCROLL TO TOP
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+  if(window.scrollY > 300){
+    topBtn.style.display = "block";
+  }
+
+  else{
+    topBtn.style.display = "none";
+  }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+});
+
+// SEARCH PRODUCT
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", () => {
+
+  let filter =
+  searchInput.value.toLowerCase();
+
+  let cards =
+  document.querySelectorAll(".product-card");
+
+  cards.forEach((card) => {
+
+    let title =
+    card.querySelector("h3").innerText.toLowerCase();
+
+    if(title.includes(filter)){
+      card.style.display = "block";
+    }
+
+    else{
+      card.style.display = "none";
+    }
+
+  });
+
+});
+      
+  </script>
+
+</body>
+</html>
