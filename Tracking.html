@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Order</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            background: #111827;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 320px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #38bdf8;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0ea5e9;
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255,255,255,0.2);
+            border-top: 4px solid #38bdf8;
+            border-radius: 50%;
+            margin: 15px auto;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #result {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            display: none;
+        }
+
+        h3 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Track Your Order</h1>
+
+    <input type="text" id="orderId" placeholder="Enter Order ID">
+
+    <button onclick="trackOrder()">Track</button>
+
+    <div class="spinner" id="spinner"></div>
+
+    <div id="result"></div>
+</div>
+
+<script>
+const orders = {
+  "ORD-001": "Processing",
+  "ORD-002": "Shipped",
+  "ORD-003": "Delivered"
+};
+
+function trackOrder() {
+  const id = document.getElementById("orderId").value;
+  const result = document.getElementById("result");
+  const spinner = document.getElementById("spinner");
+
+  // reset UI
+  result.style.display = "none";
+  spinner.style.display = "block";
+
+  // simulate loading delay
+  setTimeout(() => {
+    spinner.style.display = "none";
+    result.style.display = "block";
+
+    if (orders[id]) {
+      result.innerHTML = `<h3>Status: ${orders[id]}</h3>`;
+    } else {
+      result.innerHTML = `<h3>Order Not Found</h3>`;
+    }
+  }, 1500);
+}
+</script>
+
+</body>
+</html>
